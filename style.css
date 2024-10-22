@@ -1,0 +1,117 @@
+:root {
+  --dark-text: #f8fbff;
+  --light-body: #f3f8fe;
+  --light-main: #fdfdfd;
+  --light-second: #c3c2c8;
+  --light-hover: #f0f0f0;
+  --light-text: #151426;
+  --light-btn: hsl(0, 0%, 50%);
+  --blue: #0000ff;
+  --white: #fff;
+  --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  --font-family: consolas;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%; /* Full height */
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  font-family: var(--font-family);
+  background: linear-gradient(to right, #f09696, hsl(61, 87%, 71%));
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Stack header and calendar */
+}
+
+.calendar {
+  height: 610px;
+  width: max-content;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: var(--shadow);
+  border-radius: 25px;
+  padding: 30px 50px;
+}
+
+.calendar-header {
+  background: #3cdbff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  color: var(--white);
+  padding: 10px;
+  width: 100%; /* Full width */
+}
+
+.calendar-week-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-weight: 600;
+  color: rgb(104, 104, 104);
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar-days div {
+  width: 37px;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.calendar-days div.current-date {
+  color: var(--dark-text);
+  background-color: var(--light-btn);
+  border-radius: 20%;
+}
+
+.month-list {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 5px;
+  background-color: #ebebeb;
+}
+
+.month-list > div {
+  display: grid;
+  place-content: center;
+  margin: 5px 10px;
+}
+
+.month-list > div:hover {
+  background-color: var(--light-btn);
+  color: var(--dark-text);
+}
+
+.date-time-format {
+  display: inline;
+  justify-content: center;
+}
+
+.day-text-format, .time-format, .date-format {
+  font-size: 1.5rem;
+}
+
+h1 {
+  font-size: 60px;
+  text-align: center;
+  margin-bottom: 20px; /* Space between heading and calendar */
+  font-family: consolas;
+}
